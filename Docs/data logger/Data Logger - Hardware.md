@@ -1,0 +1,3 @@
+- [[RPi Zero 2W]]
+- [[Waveshare Sense HAT (B)]]
+- [[Waveshare UPS HAT (C)]]
