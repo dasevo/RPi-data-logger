@@ -18,13 +18,24 @@ class Sensor:
     def sendMessage(self, message):
         self.bus.write_byte_data(self.address, message)
 
+
+class LPS22HB(Sensor):
+    def __init__(self):
+        pass
+    
     def readRawData(self, firstReg, regCount):
         data = self.bus.read_i2c_block_data(self.address, firstReg, regCount)
         return data
-
+    
     def readData(self, firstReg, regCount, conversionFactor):
         byteData = self.readRawData(firstReg, regCount)
         rawData = int.from_bytes(byteData, "little")
         unitData = rawData / conversionFactor
         return unitData
+
+class SHTC3(Sensor):
+    def __init__(self):
+        pass
+    
+    
 
